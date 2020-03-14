@@ -1,3 +1,9 @@
+# -------------------------------------------------------------------------
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License. See License.txt in the project root for
+# license information.
+# --------------------------------------------------------------------------
+
 import os
 import asyncio
 import concurrent.futures
@@ -17,13 +23,12 @@ from azure.iot.device import Message
 from azure.iot.device import MethodResponse
 
 #======================================
-# To switch from PC to RPi, switch commented/uncommented sections below
-# Note that on the real device we like to set the connection in an environment variable to not carry it around in code 
+# To switch from PC to RPi, switch commented/un-commented sections below 
 #======================================
 from blinkt import set_pixel, set_brightness, show, clear
 conn_str = os.getenv("IOTHUB_DEVICE_CONNECTION_STRING")
 #======================================
-# conn_str = 'ENTER_CONNECTION_STRING_HERE'
+# conn_str = '<yourconnectionstring>'
 # def set_pixel(i, r, g, b):
 #     time.sleep(0.1)
 # def set_brightness(b):
@@ -131,12 +136,14 @@ led_manager = Led_Manager()
 message_index = 1
 
 async def main():
-    # Thread pool Executor to execute async fucntions in sync task
+    # Thread pool Executor to execute async functions in sync task
 #    pool = concurrent.futures.ThreadPoolExecutor()
 
     # Extract device id from connection string
     conn_str_obj = dict(item.split('=', 1) for item in conn_str.split(';'))
     device_id = conn_str_obj["DeviceId"]
+
+    print("Connecting device " + device_id)
 
     # The client object is used to interact with your Azure IoT hub.
     device_client = IoTHubDeviceClient.create_from_connection_string(conn_str)
@@ -292,7 +299,8 @@ async def main():
     def stdin_listener():
         pool = concurrent.futures.ThreadPoolExecutor()
         while True:
-            selection = input("Commands: \n   Q: quit\n   S: Send batch of messages in sequence\n   A: Send an alert message\n")
+            print("To control the leds from Azure IoT, you can send the following commands through Direct Methods: TurnLedsOff, ScrollLeds")
+            selection = input("Local Commands: \n   Q: quit\n   S: Send batch of messages in sequence\n   A: Send an alert message\n")
             if selection == "Q" or selection == "q":
                 print("Quitting...")
                 break
