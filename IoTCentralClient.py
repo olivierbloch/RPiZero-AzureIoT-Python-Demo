@@ -39,7 +39,8 @@ def derive_device_key(device_id, group_symmetric_key):
     return device_key_encoded.decode("utf-8")
 
 #======================================
-# To switch from PC to RPi, switch commented/un-commented sections below 
+# To switch from PC to RPi, switch commented/un-commented sections below
+# Note: when using Azure IoT Central, the provisioning host is the DPS Global Device endpoint global.azure-devices-provisioning.net 
 #======================================
 from blinkt import set_pixel, set_brightness, show, clear
 provisioning_host = os.getenv("PROVISIONING_HOST")
