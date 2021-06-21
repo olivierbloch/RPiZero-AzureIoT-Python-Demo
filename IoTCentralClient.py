@@ -18,6 +18,7 @@ import hashlib
 import sys
 import random
 
+
 from azure.iot.device.aio import IoTHubDeviceClient
 from azure.iot.device.aio import ProvisioningDeviceClient
 from azure.iot.device import Message
@@ -39,8 +40,7 @@ def derive_device_key(device_id, group_symmetric_key):
     return device_key_encoded.decode("utf-8")
 
 #======================================
-# To switch from PC to RPi, switch commented/un-commented sections below
-# Note: when using Azure IoT Central, the provisioning host is the DPS Global Device endpoint global.azure-devices-provisioning.net 
+# To switch from PC to RPi, switch commented/un-commented sections below 
 #======================================
 from blinkt import set_pixel, set_brightness, show, clear
 provisioning_host = os.getenv("PROVISIONING_HOST")
@@ -169,45 +169,21 @@ led_manager = Led_Manager()
 async def main():
         
     # Function for sending message
-    async def send_test_message(i):
-            global led_manager
-            global message_index
-            print("sending message #" + str(message_index))
+    async def send_test_message():
+            print("Sending telemetry message from device " + device_id)
             body_dict = {}
-            body_dict['Weather'] = {}
-            body_dict['Weather']['Temperature'] = random.randrange(65, 75, 1)
-            body_dict['Weather']['Humidity'] = random.randrange(40, 60, 1)
+            body_dict['Temperature'] = random.randrange(76, 80, 1)
+            body_dict['Humidity'] = random.randrange(40, 60, 1)
             body_dict['Location']='28.424911, -81.468962'
             body_json = json.dumps(body_dict)
             print(body_json)
             msg = Message(body_json)
             msg.message_id = uuid.uuid4()
             msg.correlation_id = "correlation-1234"
-            msg.custom_properties["Alert"] = "no"
             msg.contentEncoding="utf-8",
             msg.contentType="application/json",
             await device_client.send_message(msg)
-            print('Message #' + str(message_index) + ' sent' )
-            led_manager.set_led(i, 'On', 0, 255, 0, True)
-            message_index=message_index+1
-
-    async def send_alert_message():
-            print("Sending alert from device " + device_id)
-            body_dict = {}
-            body_dict['Weather'] = {}
-            body_dict['Weather']['Temperature'] = random.randrange(76, 80, 1)
-            body_dict['Weather']['Humidity'] = random.randrange(40, 60, 1)
-            body_dict['Location']='28.424911, -81.468962'
-            body_json = json.dumps(body_dict)
-            print(body_json)
-            msg = Message(body_json)
-            msg.message_id = uuid.uuid4()
-            msg.correlation_id = "correlation-1234"
-            msg.custom_properties["Alert"] = "yes"
-            msg.contentEncoding="utf-8",
-            msg.contentType="application/json",
-            await device_client.send_message(msg)
-            print("Done sending alert message")
+            print("Done sending message")
 
     # update the reported properties
     async def update_device_twin(device_client, led_manager):
@@ -356,19 +332,13 @@ async def main():
         pool = concurrent.futures.ThreadPoolExecutor()
         while True:
             print("To control the leds from Azure IoT, you can send the following commands through Direct Methods: TurnLedsOff, ScrollLeds")
-            selection = input("Commands: \n   Q: quit\n   S: Send batch of messages in sequence\n   A: Send an alert message\n")
+            selection = input("Commands: \n   Q: quit\n   S: Send a telemetry message\n")
             if selection == "Q" or selection == "q":
                 print("Quitting...")
                 break
             elif selection == "S" or selection =="s":
                 # send 8 messages one after the other with a sleep
-                for i in range (8):
-                    result = pool.submit(asyncio.run, send_test_message(i)).result()
-                    time.sleep(1)
-                result = pool.submit(asyncio.run, update_device_twin(device_client, led_manager)).result() # Update reported properties
-            elif selection == "A" or selection =="a":
-                # send an alert message
-                result = pool.submit(asyncio.run, send_alert_message()).result()
+                result = pool.submit(asyncio.run, send_test_message()).result()
 
     loop = asyncio.get_running_loop()
     user_finished = loop.run_in_executor(None, stdin_listener)

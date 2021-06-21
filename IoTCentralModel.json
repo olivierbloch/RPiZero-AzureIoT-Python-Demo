@@ -1,0 +1,471 @@
+[
+    {
+      "@id": "dtmi:olivierdemoscentral:RPiZero46s;1",
+      "@type": "Interface",
+      "contents": [
+        {
+          "@id": "dtmi:olivierdemoscentral:RPiZero46s:led1_status;1",
+          "@type": "Property",
+          "displayName": {
+            "en": "led1_status"
+          },
+          "name": "led1_status",
+          "schema": "boolean",
+          "writable": true
+        },
+        {
+          "@id": "dtmi:olivierdemoscentral:RPiZero46s:led1_blink;1",
+          "@type": "Property",
+          "displayName": {
+            "en": "led1_blink"
+          },
+          "name": "led1_blink",
+          "schema": "boolean",
+          "writable": true
+        },
+        {
+          "@id": "dtmi:olivierdemoscentral:RPiZero46s:led1_r;1",
+          "@type": "Property",
+          "displayName": {
+            "en": "led1_r"
+          },
+          "name": "led1_r",
+          "schema": "integer",
+          "writable": true
+        },
+        {
+          "@id": "dtmi:olivierdemoscentral:RPiZero46s:led1_g;1",
+          "@type": "Property",
+          "displayName": {
+            "en": "led1_g"
+          },
+          "name": "led1_g",
+          "schema": "integer",
+          "writable": true
+        },
+        {
+          "@id": "dtmi:olivierdemoscentral:RPiZero46s:led1_b;1",
+          "@type": "Property",
+          "displayName": {
+            "en": "led1_b"
+          },
+          "name": "led1_b",
+          "schema": "integer",
+          "writable": true
+        },
+        {
+          "@id": "dtmi:olivierdemoscentral:RPiZero46s:led2_status;1",
+          "@type": "Property",
+          "displayName": {
+            "en": "led2_status"
+          },
+          "name": "led2_status",
+          "schema": "boolean",
+          "writable": true
+        },
+        {
+          "@id": "dtmi:olivierdemoscentral:RPiZero46s:led2_blink;1",
+          "@type": "Property",
+          "displayName": {
+            "en": "led2_blink"
+          },
+          "name": "led2_blink",
+          "schema": "boolean",
+          "writable": true
+        },
+        {
+          "@id": "dtmi:olivierdemoscentral:RPiZero46s:led2_r;1",
+          "@type": "Property",
+          "displayName": {
+            "en": "led2_r"
+          },
+          "name": "led2_r",
+          "schema": "integer",
+          "writable": true
+        },
+        {
+          "@id": "dtmi:olivierdemoscentral:RPiZero46s:led2_g;1",
+          "@type": "Property",
+          "displayName": {
+            "en": "led2_g"
+          },
+          "name": "led2_g",
+          "schema": "integer",
+          "writable": true
+        },
+        {
+          "@id": "dtmi:olivierdemoscentral:RPiZero46s:led2_b;1",
+          "@type": "Property",
+          "displayName": {
+            "en": "led2_b"
+          },
+          "name": "led2_b",
+          "schema": "integer",
+          "writable": true
+        },
+        {
+          "@id": "dtmi:olivierdemoscentral:RPiZero46s:led3_status;1",
+          "@type": "Property",
+          "displayName": {
+            "en": "led3_status"
+          },
+          "name": "led3_status",
+          "schema": "boolean",
+          "writable": true
+        },
+        {
+          "@id": "dtmi:olivierdemoscentral:RPiZero46s:led3_blink;1",
+          "@type": "Property",
+          "displayName": {
+            "en": "led3_blink"
+          },
+          "name": "led3_blink",
+          "schema": "boolean",
+          "writable": true
+        },
+        {
+          "@id": "dtmi:olivierdemoscentral:RPiZero46s:led3_r;1",
+          "@type": "Property",
+          "displayName": {
+            "en": "led3_r"
+          },
+          "name": "led3_r",
+          "schema": "integer",
+          "writable": true
+        },
+        {
+          "@id": "dtmi:olivierdemoscentral:RPiZero46s:led3_g;1",
+          "@type": "Property",
+          "displayName": {
+            "en": "led3_g"
+          },
+          "name": "led3_g",
+          "schema": "integer",
+          "writable": true
+        },
+        {
+          "@id": "dtmi:olivierdemoscentral:RPiZero46s:led3_b;1",
+          "@type": "Property",
+          "displayName": {
+            "en": "led3_b"
+          },
+          "name": "led3_b",
+          "schema": "integer",
+          "writable": true
+        },
+        {
+          "@id": "dtmi:olivierdemoscentral:RPiZero46s:led4_status;1",
+          "@type": "Property",
+          "displayName": {
+            "en": "led4_status"
+          },
+          "name": "led4_status",
+          "schema": "boolean",
+          "writable": true
+        },
+        {
+          "@id": "dtmi:olivierdemoscentral:RPiZero46s:led4_blink;1",
+          "@type": "Property",
+          "displayName": {
+            "en": "led4_blink"
+          },
+          "name": "led4_blink",
+          "schema": "boolean",
+          "writable": true
+        },
+        {
+          "@id": "dtmi:olivierdemoscentral:RPiZero46s:led4_r;1",
+          "@type": "Property",
+          "displayName": {
+            "en": "led4_r"
+          },
+          "name": "led4_r",
+          "schema": "integer",
+          "writable": true
+        },
+        {
+          "@id": "dtmi:olivierdemoscentral:RPiZero46s:led4_g;1",
+          "@type": "Property",
+          "displayName": {
+            "en": "led4_g"
+          },
+          "name": "led4_g",
+          "schema": "integer",
+          "writable": true
+        },
+        {
+          "@id": "dtmi:olivierdemoscentral:RPiZero46s:led4_b;1",
+          "@type": "Property",
+          "displayName": {
+            "en": "led4_b"
+          },
+          "name": "led4_b",
+          "schema": "integer",
+          "writable": true
+        },
+        {
+          "@id": "dtmi:olivierdemoscentral:RPiZero46s:led5_status;1",
+          "@type": "Property",
+          "displayName": {
+            "en": "led5_status"
+          },
+          "name": "led5_status",
+          "schema": "boolean",
+          "writable": true
+        },
+        {
+          "@id": "dtmi:olivierdemoscentral:RPiZero46s:led5_blink;1",
+          "@type": "Property",
+          "displayName": {
+            "en": "led5_blink"
+          },
+          "name": "led5_blink",
+          "schema": "boolean",
+          "writable": true
+        },
+        {
+          "@id": "dtmi:olivierdemoscentral:RPiZero46s:led5_r;1",
+          "@type": "Property",
+          "displayName": {
+            "en": "led5_r"
+          },
+          "name": "led5_r",
+          "schema": "integer",
+          "writable": true
+        },
+        {
+          "@id": "dtmi:olivierdemoscentral:RPiZero46s:led5_g;1",
+          "@type": "Property",
+          "displayName": {
+            "en": "led5_g"
+          },
+          "name": "led5_g",
+          "schema": "integer",
+          "writable": true
+        },
+        {
+          "@id": "dtmi:olivierdemoscentral:RPiZero46s:led5_b;1",
+          "@type": "Property",
+          "displayName": {
+            "en": "led5_b"
+          },
+          "name": "led5_b",
+          "schema": "integer",
+          "writable": true
+        },
+        {
+          "@id": "dtmi:olivierdemoscentral:RPiZero46s:led6_status;1",
+          "@type": "Property",
+          "displayName": {
+            "en": "led6_status"
+          },
+          "name": "led6_status",
+          "schema": "boolean",
+          "writable": true
+        },
+        {
+          "@id": "dtmi:olivierdemoscentral:RPiZero46s:led6_blink;1",
+          "@type": "Property",
+          "displayName": {
+            "en": "led6_blink"
+          },
+          "name": "led6_blink",
+          "schema": "boolean",
+          "writable": true
+        },
+        {
+          "@id": "dtmi:olivierdemoscentral:RPiZero46s:led6_r;1",
+          "@type": "Property",
+          "displayName": {
+            "en": "led6_r"
+          },
+          "name": "led6_r",
+          "schema": "integer",
+          "writable": true
+        },
+        {
+          "@id": "dtmi:olivierdemoscentral:RPiZero46s:led6_g;1",
+          "@type": "Property",
+          "displayName": {
+            "en": "led6_g"
+          },
+          "name": "led6_g",
+          "schema": "integer",
+          "writable": true
+        },
+        {
+          "@id": "dtmi:olivierdemoscentral:RPiZero46s:led6_b;1",
+          "@type": "Property",
+          "displayName": {
+            "en": "led6_b"
+          },
+          "name": "led6_b",
+          "schema": "integer",
+          "writable": true
+        },
+        {
+          "@id": "dtmi:olivierdemoscentral:RPiZero46s:led7_status;1",
+          "@type": "Property",
+          "displayName": {
+            "en": "led7_status"
+          },
+          "name": "led7_status",
+          "schema": "boolean",
+          "writable": true
+        },
+        {
+          "@id": "dtmi:olivierdemoscentral:RPiZero46s:led7_blink;1",
+          "@type": "Property",
+          "displayName": {
+            "en": "led7_blink"
+          },
+          "name": "led7_blink",
+          "schema": "boolean",
+          "writable": true
+        },
+        {
+          "@id": "dtmi:olivierdemoscentral:RPiZero46s:led7_r;1",
+          "@type": "Property",
+          "displayName": {
+            "en": "led7_r"
+          },
+          "name": "led7_r",
+          "schema": "integer",
+          "writable": true
+        },
+        {
+          "@id": "dtmi:olivierdemoscentral:RPiZero46s:led7_g;1",
+          "@type": "Property",
+          "displayName": {
+            "en": "led7_g"
+          },
+          "name": "led7_g",
+          "schema": "integer",
+          "writable": true
+        },
+        {
+          "@id": "dtmi:olivierdemoscentral:RPiZero46s:led7_b;1",
+          "@type": "Property",
+          "displayName": {
+            "en": "led7_b"
+          },
+          "name": "led7_b",
+          "schema": "integer",
+          "writable": true
+        },
+        {
+          "@id": "dtmi:olivierdemoscentral:RPiZero46s:led8_status;1",
+          "@type": "Property",
+          "displayName": {
+            "en": "led8_status"
+          },
+          "name": "led8_status",
+          "schema": "boolean",
+          "writable": true
+        },
+        {
+          "@id": "dtmi:olivierdemoscentral:RPiZero46s:led8_blink;1",
+          "@type": "Property",
+          "displayName": {
+            "en": "led8_blink"
+          },
+          "name": "led8_blink",
+          "schema": "boolean",
+          "writable": true
+        },
+        {
+          "@id": "dtmi:olivierdemoscentral:RPiZero46s:led8_r;1",
+          "@type": "Property",
+          "displayName": {
+            "en": "led8_r"
+          },
+          "name": "led8_r",
+          "schema": "integer",
+          "writable": true
+        },
+        {
+          "@id": "dtmi:olivierdemoscentral:RPiZero46s:led8_g;1",
+          "@type": "Property",
+          "displayName": {
+            "en": "led8_g"
+          },
+          "name": "led8_g",
+          "schema": "integer",
+          "writable": true
+        },
+        {
+          "@id": "dtmi:olivierdemoscentral:RPiZero46s:led8_b;1",
+          "@type": "Property",
+          "displayName": {
+            "en": "led8_b"
+          },
+          "name": "led8_b",
+          "schema": "integer",
+          "writable": true
+        },
+        {
+          "@id": "dtmi:olivierdemoscentral:RPiZero46s:ScrollLeds;1",
+          "@type": "Command",
+          "commandType": "synchronous",
+          "displayName": {
+            "en": "ScrollLeds"
+          },
+          "name": "ScrollLeds"
+        },
+        {
+          "@id": "dtmi:olivierdemoscentral:RPiZero46s:TurnLedsOff;1",
+          "@type": "Command",
+          "commandType": "synchronous",
+          "displayName": {
+            "en": "TurnLedsOff"
+          },
+          "name": "TurnLedsOff"
+        },
+        {
+          "@id": "dtmi:olivierdemoscentral:RPiZero46s:Temperature;1",
+          "@type": [
+            "Telemetry",
+            "Temperature"
+          ],
+          "displayName": {
+            "en": "Temperature"
+          },
+          "name": "Temperature",
+          "schema": "double",
+          "unit": "degreeFahrenheit"
+        },
+        {
+          "@id": "dtmi:olivierdemoscentral:RPiZero46s:Humidity;1",
+          "@type": [
+            "Telemetry",
+            "Humidity"
+          ],
+          "displayName": {
+            "en": "Humidity"
+          },
+          "name": "Humidity",
+          "schema": "double",
+          "unit": "percent"
+        },
+        {
+          "@id": "dtmi:olivierdemoscentral:RPiZero46s:Location;1",
+          "@type": [
+            "Telemetry",
+            "Location"
+          ],
+          "displayName": {
+            "en": "Location"
+          },
+          "name": "Location",
+          "schema": "geopoint"
+        }
+      ],
+      "displayName": {
+        "en": "RPiZero"
+      },
+      "@context": [
+        "dtmi:iotcentral:context;2",
+        "dtmi:dtdl:context;2"
+      ]
+    }
+  ]
